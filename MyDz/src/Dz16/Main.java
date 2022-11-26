@@ -1,7 +1,13 @@
 package Dz16;
 
 public class Main {
-    Androids android = new Androids();
+    public static void main(String[] args) {
 
-    IPhones iPhones = new IPhones();
+        Androids android = new Androids();
+        android.call();
+
+
+        IPhones iPhones = new IPhones();
+        iPhones.call();
+    }
 }
