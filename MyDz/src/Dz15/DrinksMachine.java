@@ -5,6 +5,6 @@ package Dz15;
     TEA,
     LEMONADE,
     MOJITO,
-    MINERAL,
+    MINERAL_WATER,
     COCA_COLA
 }

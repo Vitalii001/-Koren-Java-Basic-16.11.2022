@@ -1,31 +1,41 @@
 package Dz15;
 
+import java.math.BigDecimal;
+
 public class Drinks {
-    public double value;
-    public static final double COFFEE_PRICE = 5.50;
-    public static final double TEA_PRICE = 5;
-    public static final double LEMONADE_PRICE = 6.50;
-    public static final double MOJITO_PRICE = 8;
-    public static final double MINERAL_PRICE = 3;
-    public static final double COCA_COLA_PRICE = 4.50;
-    
-    private static int drinkCount = 0;
-    private DrinksMachine type;
-    public double price;
-    public double totalCost;
+    private static int drinksCount;
+    private BigDecimal price;
+    private String name;
+    private DrinksMachine drink;
 
-    public Drinks(DrinksMachine type) {
-        this.type = type;
-        drinkCount++;
+    private static BigDecimal commonPrice = new BigDecimal("0.00");
+
+    public Drinks(String name, String price, DrinksMachine drink) {
+        this.name = name;
+        this.price = new BigDecimal(price);
+        this.drink = drink;
+        drinksCount++;
+        BigDecimal tmp = new BigDecimal(price);
+        commonPrice = commonPrice.add(tmp);
     }
-    public static int getDrinkCount (){
-    return drinkCount;
-
+    public BigDecimal getPrice() {
+        return price;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public DrinksMachine getDrink() {
+        return drink;
+    }
 
+    public static int getDrinksCount() {
+        return drinksCount;
+    }
 
+    public static BigDecimal getCommonPrice() {
+        return commonPrice;
+    }
+    }
 
-
-}
